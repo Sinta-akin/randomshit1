@@ -1,0 +1,10 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // TODO: Add authenticated, role-aware rules for profile photos,
+    // vehicle images, workshop documents and vehicle manuals.
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}
